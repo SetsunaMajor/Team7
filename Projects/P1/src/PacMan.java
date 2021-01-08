@@ -27,10 +27,10 @@ public class PacMan{
      * for types. 
      */
 	public boolean is_ghost_in_range() { 
-        if (myMap.get(myLoc.shift(0,1)) == Map.Type.GHOST || 
-            myMap.get(myLoc.shift(1,0)) == Map.Type.GHOST || 
-            myMap.get(myLoc.shift(-1,0)) == Map.Type.GHOST || 
-            myMap.get(myLoc.shift(0,-1)) == Map.Type.GHOST) {
+        if (myMap.get(myLoc.shift(0,1)).contains(Map.Type.GHOST) || 
+            myMap.get(myLoc.shift(1,0)).contains(Map.Type.GHOST) || 
+            myMap.get(myLoc.shift(-1,0)).contains(Map.Type.GHOST) || 
+            myMap.get(myLoc.shift(0,-1)).contains(Map.Type.GHOST)) {
                 return true;
         }
 
