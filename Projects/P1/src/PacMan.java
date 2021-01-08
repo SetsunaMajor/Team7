@@ -22,7 +22,18 @@ public class PacMan{
 		return false;
 	}
 
+    /* Will use the map provided and call the get function. Given the location 
+     * we can call the shift method to check what is on that cordinate and check
+     * for types. 
+     */
 	public boolean is_ghost_in_range() { 
+        if (myMap.get(myLoc.shift(0,1)) == Map.Type.GHOST || 
+            myMap.get(myLoc.shift(1,0)) == Map.Type.GHOST || 
+            myMap.get(myLoc.shift(-1,0)) == Map.Type.GHOST || 
+            myMap.get(myLoc.shift(0,-1)) == Map.Type.GHOST) {
+                return true;
+        }
+
 		return false;
 	}
 
