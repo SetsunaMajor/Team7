@@ -32,26 +32,7 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		ArrayList<Location>valid_moves = new ArrayList<Location>();
-		valid_moves = get_valid_moves();
-		Map.Type t = null;
-		
-		if(valid_moves == null){
-			return false;
-		}
-
-		myLoc.shift(valid_moves.get(0).x, valid_moves.get(0).y);
-		if(myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
-			t = Map.Type.COOKIE;
-		} else if (myMap.getLoc(myLoc).contains(Map.Type.EMPTY)){
-			t = Map.Type.EMPTY;
-		} else if (myMap.getLoc(myLoc).contains(Map.Type.GHOST)){
-			t = Map.Type.GHOST;
-		}
-
-		myMap.move(myName, myLoc, t);
-
-		return true;
+		return false;
 	}
 
 	public boolean is_ghost_in_range() { 
