@@ -15,7 +15,6 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		
 		ArrayList<Location> possible_moves = new ArrayList<Location>();
 			possible_moves.add(myLoc.shift(1,0));
 			possible_moves.add(myLoc.shift(0,1));
