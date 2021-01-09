@@ -25,7 +25,7 @@ public class Ghost{
 	}
 
     /* Returns if pacman is nearby the current object. The is_pacman_in_range
-     * does that so we call that function.
+     * does that so we will simply call that function. 
      */
 	public boolean attack() {
 		return this.is_pacman_in_range();
