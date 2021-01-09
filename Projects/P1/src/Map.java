@@ -52,10 +52,20 @@ public class Map{
 		return gameOver;
 	}
 		
+    /* The function will first check if the location and componenets contains
+     * the name in their respective hash. If it does contain it, it will 
+     * update their values in that hash. Otherwise, it will return false. 
+     * After the update we call the setLocation function from components to 
+     * update the move.
+     */
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
-		return false;
+        if (!locations.containsKey(name) || !components.containsKey(name)) return false;
+        components.get(name).setLocation(loc);
+        locations.put(name, loc);
+        field.get(loc).add(type);
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
