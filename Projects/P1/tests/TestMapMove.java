@@ -5,6 +5,8 @@ import java.io.*;
 public class TestMapMove {
 
 	public void testMapMove() {
-		return null;
+		NoFrame frame = new NoFrame(); 
+		Ghost ghost1 = frame.addGhost(new Location(2, 2), "ghost1", Color.BLACK);
+		assertTrue(frame.getMap().move("ghost1", new Location(2, 1), Map.Type.GHOST));
 	}
 }
