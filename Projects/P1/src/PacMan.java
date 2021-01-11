@@ -17,15 +17,24 @@ public class PacMan{
 	public ArrayList<Location> get_valid_moves() {
 
 		ArrayList<Location> possible_moves = new ArrayList<Location>();
-			possible_moves.add(myLoc.shift(1,0));
-			possible_moves.add(myLoc.shift(0,1));
-			possible_moves.add(myLoc.shift(-1,0));
-			possible_moves.add(myLoc.shift(0,-1));
-		for (Location l : possible_moves) {
-			if (myMap.getLoc(l).contains(Map.Type.WALL)) {
-				possible_moves.remove(l);
-			}
-		}
+
+		Location left = myLoc.shift(-1, 0);
+		Location right = myLoc.shift(1, 0);
+		Location up = myLoc.shift(0, 1);
+		Location down = myLoc.shift(0, -1);
+
+		if (!myMap.getLoc(left).contains(Map.Type.WALL))
+			possible_moves.add(left);
+			
+		if (!myMap.getLoc(right).contains(Map.Type.WALL))
+			possible_moves.add(right);
+
+		if (!myMap.getLoc(up).contains(Map.Type.WALL))
+			possible_moves.add(up);
+
+		if (!myMap.getLoc(down).contains(Map.Type.WALL))
+			possible_moves.add(down);
+
 		return possible_moves;
 		
 
