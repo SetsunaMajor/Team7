@@ -15,13 +15,14 @@ public class Ghost{
 	public ArrayList<Location> get_valid_moves() {
 
         ArrayList<Location> valid_ghost_moves = new ArrayList<Location>();
+		ArrayList<Location> valid_ghost_moves2 = new ArrayList<Location>();
         valid_ghost_moves.add(myLoc.shift(0,1));
         valid_ghost_moves.add(myLoc.shift(1,0));
         valid_ghost_moves.add(myLoc.shift(0,-1));
         valid_ghost_moves.add(myLoc.shift(-1,0));
         for (Location l : valid_ghost_moves) {
-            if (myMap.getLoc(l).contains(Map.Type.WALL)) {
-                valid_ghost_moves.remove(l);
+            if (!myMap.getLoc(l).contains(Map.Type.WALL)) {
+                valid_ghost_moves2.add(l);
             }
         }
 
