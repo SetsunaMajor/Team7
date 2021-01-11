@@ -62,6 +62,14 @@ public class Map{
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 	   
+			//update locations, components, and field
+		//use the setLocation method for the component to move it to the new location
+        if (!locations.containsKey(name) || !components.containsKey(name)) return false;
+        components.get(name).setLocation(loc.x, loc.y);
+        locations.put(name, loc);
+        field.get(loc).add(type);
+		return true;
+
 		return false;
 	}
 	
@@ -80,13 +88,35 @@ public class Map{
 
 	public boolean attack(String Name) {
 
+		//Checking to see if the Ghost exists
+		if (locations.containsKey(Name) == true) {
+			//Creating a Ghost to utilize the attack method.
+			Ghost ghostName = new Ghost(Name, locations.get(Name), this);
+			if (ghostName.attack() == true) {
+				gameOver = true;
+				return true;
+			}
+		}
+		//update gameOver
+
 		return false;
 	}
 	
-	public JComponent eatCookie(String name) {
+	public JComponent eatCookie(String name) {	
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		
+
+		if(locations.containsKey(name)){
+			Location cookieLocation = locations.get(name);
+			String componentString = "tok_x" + cookieLocation.x + "_y" + cookieLocation.y;
+
+			/* Remove the cookie from hashmaps*/
+			field.get(cookieLocation).remove(Type.COOKIE);
+			locations.remove(componentString);
+			cookies--;
+			return components.remove(componentString);
+		}
+
 		return null;
 	}
 }
