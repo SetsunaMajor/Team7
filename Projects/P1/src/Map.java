@@ -74,6 +74,15 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
+		//Checking to see if the Ghost exists
+		if (locations.containsKey(Name) == true) {
+			//Creating a Ghost to utilize the attack method.
+			Ghost ghostName = new Ghost(Name, locations.get(Name), this);
+			if (ghostName.attack() == true) {
+				gameOver = true;
+				return true;
+			}
+		}
 		//update gameOver
 		return false;
 	}
