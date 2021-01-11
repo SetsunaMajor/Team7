@@ -36,5 +36,6 @@ public class TestGhostInRange extends TestCase {
 
 		assertTrue(player.is_ghost_in_range());
 
+    }
 }
 
