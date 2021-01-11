@@ -13,22 +13,21 @@ public class Ghost{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;
-	}
+
+        return null;
+    }
 
 	public boolean move() {
 		return false;
 	}
 
 	public boolean is_pacman_in_range() { 
+
 		return false;
 	}
 
-    /* Returns if pacman is nearby the current object. The is_pacman_in_range
-     * does that so we call that function.
-     */
 	public boolean attack() {
+
 		return this.is_pacman_in_range();
-		
 	}
 }
