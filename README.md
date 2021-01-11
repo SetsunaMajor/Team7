@@ -28,7 +28,7 @@ Make sure to run these commands from inside the P1 directory
 
 - **move()**
   + Type: `() -> Bool`
-  + Description: Need to add description. 
+  + Description: Changes the location of PacMan to a valid location if possible. JUnit tests verify that the function returns true when a valid location is available, and false otherwise.
 
 - **is_ghost_in_range()**
   + Type: `() -> Bool`
@@ -49,7 +49,7 @@ Make sure to run these commands from inside the P1 directory
 
 - **is_pacman_in_range()**
   + Type: `() -> Bool`
-  + Description: Need to add description.
+  + Description: Returns true if PacMan is in in range (within a radius of 1). JUnit tests verify that function returns true when PacMan is indeed in range, and false otherwise.
  
 - **attack()**
   + Type: `() -> Bool`
@@ -70,4 +70,4 @@ Make sure to run these commands from inside the P1 directory
   
 - **eatCookie(String name)**
   + Type: `() -> JComponent`
-  + Description: Need to add description.
+  + Description: Updates locations, field, components, and cookies counter variable inside the map class to remove the eaten cookie from the map. JUnit tests verify that a cookie is eaten when supposed to, and function returns null when not on a cookie.
