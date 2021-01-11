@@ -31,30 +31,7 @@ public class Ghost{
     	}
 
 	public boolean move() {
-				ArrayList<Location> valid_moves = get_valid_moves();
-		Location towards = null;
-		Location nothing = null;
-		if (valid_moves != null) {
-			for (Location l : valid_moves) {
-				if (myMap.getLoc(l).contains(Map.Type.COOKIE)) {
-					towards = l; 
-				} else if (myMap.getLoc(l).contains(Map.Type.EMPTY)) {
-					nothing = l;
-				}
-			}
-			if (towards != null) {
-				myMap.move(myName, towards, Map.Type.GHOST);
-				return true;
-			} else if (nothing != null) {
-				myMap.move(myName, nothing, Map.Type.GHOST);
-				return true;
-			} else {
-				myMap.move(myName, valid_moves.get(0), Map.Type.GHOST);
-				return true;
-			}
-		} else {
-			return false;
-		}
+		return false;
 	}
 
 	public boolean is_pacman_in_range() { 
