@@ -64,10 +64,9 @@ public class Map{
         if (!locations.containsKey(name) || !components.containsKey(name)) return false;
         components.get(name).setLocation(loc.x, loc.y);
         locations.put(name, loc);
-        field.get(loc).add(type);
+		field.get(loc).add(type);
+		
 		return true;
-
-		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
