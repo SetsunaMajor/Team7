@@ -31,7 +31,7 @@ Make sure to run these commands from inside the P1 directory
 
 - **is_ghost_in_range()**
   + Type: `() -> Bool`
-  + Description: Need to add description. 
+  + Description: Checks to see if ghosts are in range. Will return true if there is at least one otherwise false.  
   
 - **consume()**
   + Type: `() -> JComponent`
@@ -52,12 +52,12 @@ Make sure to run these commands from inside the P1 directory
  
 - **attack()**
   + Type: `() -> Bool`
-  + Description: Need to add description.
+  + Description: Test to see if pacman is in range. It will return that methods results.
 
 ### 4.3 Map Class
 - **move(String name, Location loc, Type type)**
   + Type: `(String name, Location loc, Type type) -> Bool`
-  + Description: Need to add description.
+  + Description: with the given paramters will try to see if it is possible to make a move. 
 
 - **getLoc(Location loc)**
   + Type: `(Location loc) -> HashSet<Type>`
