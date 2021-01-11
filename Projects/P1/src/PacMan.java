@@ -15,7 +15,6 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		
 		ArrayList<Location> possible_moves = new ArrayList<Location>();
 			possible_moves.add(myLoc.shift(1,0));	
 			possible_moves.add(myLoc.shift(0,1));	
@@ -27,7 +26,6 @@ public class PacMan{
 			}	
 		}	
 		return possible_moves;
-		
 	}
 
 	public boolean move() {
@@ -58,25 +56,17 @@ public class PacMan{
      * for types. 
      */
 	public boolean is_ghost_in_range() { 
-        if (myMap.getLoc(myLoc.shift(0,1)).contains(Map.Type.GHOST) || 
-            myMap.getLoc(myLoc.shift(1,0)).contains(Map.Type.GHOST) || 
-            myMap.getLoc(myLoc.shift(-1,0)).contains(Map.Type.GHOST) || 
-            myMap.getLoc(myLoc.shift(0,-1)).contains(Map.Type.GHOST)) {
+		if (myMap.getLoc(myLoc.shift(0,1)).contains(Map.Type.GHOST) || 
+            	myMap.getLoc(myLoc.shift(1,0)).contains(Map.Type.GHOST) || 
+           	myMap.getLoc(myLoc.shift(-1,0)).contains(Map.Type.GHOST) || 
+           	myMap.getLoc(myLoc.shift(0,-1)).contains(Map.Type.GHOST)) {
                 return true;
-        }
+        	}
 
 		return false;
 	}
 
 	public JComponent consume() { 
-		if(myLoc.contains(Map.Type.CookieComponent))
-		{
-				myMap.eatCookie(myName);
-		}
-		else
-		{
-				return null;
-		}
-		}
+		return myMap.eatCookie(myName);
 	}
 }
