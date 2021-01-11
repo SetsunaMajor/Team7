@@ -17,10 +17,10 @@ public class TestPacManMove extends TestCase {
 		//Start The Game
 		frame.startGame();
 
-		AssertTrue(pacman.move());
+		assertTrue(pacman.move());
 
 		pacman.shift(50, 50);
 
-		AssertFalse(pacman.move());
+		assertFalse(pacman.move());
 	}
 }
