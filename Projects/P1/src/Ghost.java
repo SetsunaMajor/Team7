@@ -29,5 +29,6 @@ public class Ghost{
      */
 	public boolean attack() {
 		return this.is_pacman_in_range();
+		
 	}
 }
