@@ -6,13 +6,12 @@
  * Zachary Santamaria
 
 ## 2. Running the Code
-___
 This code could be run from the command line by using the following commands.
 ```bash
 javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
-## 3 Running the Tests
+## 3. Running the Tests
 ```bash
 javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
 java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore testname
@@ -24,7 +23,7 @@ Make sure to run these commands from inside the P1 directory
 ### 4.1 PacMan Class
 - **get_valid_moves()**
   + Type: `() -> ArrayList`
-  + Description: Need to add description.
+  + Description: This method returns all the valid moves that PacMan can make given his current position. We check left, right, up, and down to ensure that it is not a wall. The test for this shows that PacMan can move at the start of the game. 
 
 - **move()**
   + Type: `() -> Bool`
@@ -45,7 +44,7 @@ Make sure to run these commands from inside the P1 directory
 
 - **move()**
   + Type: `() -> Bool`
-  + Description: Need to add description.
+  + Description: This method utilizes the `get_valid_moves()` method to verify that there is a position to move to. The priority is moving towards cookies or empty. If there are no cookies or empty locations near the ghost he will just move in any direction. The test for this shows the ghost being able to move given at the start of the game and not being able to move when placed in a location not on the grid.
 
 - **is_pacman_in_range()**
   + Type: `() -> Bool`
@@ -66,7 +65,7 @@ Make sure to run these commands from inside the P1 directory
 
 - **attack(String name)**
   + Type: `(String name) -> Bool`
-  + Description: Need to add description.
+  + Description: We have to first verify that there is a ghost with the given name. If there is then we use the methods from Ghost.java to see if PacMan is in range and if he is then the ghost will attack and the game will be updated to over, returning true. Otherwise it returns false. 
   
 - **eatCookie(String name)**
   + Type: `() -> JComponent`
