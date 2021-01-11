@@ -35,12 +35,12 @@ Make sure to run these commands from inside the P1 directory
   
 - **consume()**
   + Type: `() -> JComponent`
-  + Description: Need to add description.
+  + Description: If there is a cookie at this current location then consumes that cookie. Returns the cookie if eating was successful otherwise it returns null.
   
 ### 4.2 Ghost Class
 - **get_valid_moves()**
   + Type: `() -> ArrayList<Location>`
-  + Description: Need to add description.
+  + Description: Finds the valid moves around the ghost.
 
 - **move()**
   + Type: `() -> Bool`
@@ -61,7 +61,7 @@ Make sure to run these commands from inside the P1 directory
 
 - **getLoc(Location loc)**
   + Type: `(Location loc) -> HashSet<Type>`
-  + Description: Need to add description.
+  + Description: Returns the hashset of the type located on the given location.
 
 - **attack(String name)**
   + Type: `(String name) -> Bool`
