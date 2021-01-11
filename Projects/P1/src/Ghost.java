@@ -13,11 +13,24 @@ public class Ghost{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;
-	}
+
+        ArrayList<Location> valid_ghost_moves = new ArrayList<Location>();
+        valid_ghost_moves.add(myLoc.shift(0,1));
+        valid_ghost_moves.add(myLoc.shift(1,0));
+        valid_ghost_moves.add(myLoc.shift(0,-1));
+        valid_ghost_moves.add(myLoc.shift(-1,0));
+        for (Location l : valid_ghost_moves) {
+            if (myMap.getLoc(l).contains(Map.Type.WALL)) {
+                valid_ghost_moves.remove(l);
+            }
+        }
+
+        return valid_ghost_moves;
+
+    	}
 
 	public boolean move() {
-		ArrayList<Location> valid_moves = get_valid_moves();
+				ArrayList<Location> valid_moves = get_valid_moves();
 		Location towards = null;
 		Location nothing = null;
 		if (valid_moves != null) {
@@ -55,9 +68,6 @@ public class Ghost{
 		return false;
 	}
 
-    /* Returns if pacman is nearby the current object. The is_pacman_in_range
-     * does that so we will simply call that function. 
-     */
 	public boolean attack() {
 		return this.is_pacman_in_range();
 	}
