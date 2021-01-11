@@ -52,25 +52,67 @@ public class Map{
 		return gameOver;
 	}
 		
+    /* The function will first check if the location and componenets contains
+     * the name in their respective hash. If it does contain it, it will 
+     * update their values in that hash. Otherwise, it will return false. 
+     * After the update we call the setLocation function from components to 
+     * update the move.
+     */
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
+        if (!locations.containsKey(name) || !components.containsKey(name)) return false;
+        components.get(name).setLocation(loc.x, loc.y);
+        locations.put(name, loc);
+        field.get(loc).add(type);
+		return true;
+
 		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		return null;
+		if(loc.x > dim || loc.y > dim){
+			return wallSet;
+		} 
+		if(field.containsKey(loc)){
+			return field.get(loc);
+		} 
+		else {
+			return emptySet;
+		}
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
+
+		//Checking to see if the Ghost exists
+		if (locations.containsKey(Name) == true) {
+			//Creating a Ghost to utilize the attack method.
+			Ghost ghostName = new Ghost(Name, locations.get(Name), this);
+			if (ghostName.attack() == true) {
+				gameOver = true;
+				return true;
+			}
+		}
+
 		return false;
 	}
 	
-	public JComponent eatCookie(String name) {
+	public JComponent eatCookie(String name) {	
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
+
+		if(locations.containsKey(name)){
+			Location cookieLocation = locations.get(name);
+			String componentString = "tok_x" + cookieLocation.x + "_y" + cookieLocation.y;
+
+			/* Remove the cookie from hashmaps*/
+			field.get(cookieLocation).remove(Type.COOKIE);
+			locations.remove(componentString);
+			cookies--;
+			return components.remove(componentString);
+		}
+
 		return null;
 	}
 }
