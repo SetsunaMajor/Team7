@@ -41,6 +41,7 @@ public class Ghost{
 		} else {
 			return false;
 		}
+		
 	}
 
 	public boolean is_pacman_in_range() { 
