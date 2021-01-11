@@ -8,8 +8,8 @@ public class TestGhostMove extends TestCase {
 		NoFrame frame = new NoFrame();
 
 		Ghost blinky = frame.addGhost(new Location(1, 1), "Blinky", Color.red);
-		asserTrue(blinky.move() == true)
+		assertEquals(true, blinky.move());
 		Ghost bad_blinky = frame.addGhost(new Location(50, 50), "Bad Blinky", Color.red);
-		asserTrue(blinky.move() == false)
+		assertEquals(false, bad_blinky.move());
 	}
 }
