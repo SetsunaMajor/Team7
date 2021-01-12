@@ -1,5 +1,6 @@
 import java.awt.Color;
 import junit.framework.*;
+import static org.junit.Assert.*;
 
 public class TestMapAttack {
 
