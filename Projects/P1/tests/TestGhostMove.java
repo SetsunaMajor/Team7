@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class TestGhostMove extends TestCase {
 
-	public void testGhostMove() throws FileNotFoundException{
+	public void testGhostMove() throws FileNotFoundException {
 		NoFrame frame = new NoFrame();
 
 		Ghost blinky = frame.addGhost(new Location(1, 1), "Blinky", Color.red);
