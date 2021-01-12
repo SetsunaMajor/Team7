@@ -10,10 +10,10 @@ public class TestMapEatCookie extends TestCase {
 
         NoFrame frame = new NoFrame();
 
-		PacMan p1 = frame.addPacMan(new Location(1,1));
+		PacMan player1 = frame.addPacMan(new Location(0,0));
 		assertTrue(frame.getMap().eatCookie("pacman") == null);
 
-		PacMan p2 = frame.addPacMan(new Location(2,2));
+		PacMan player2 = frame.addPacMan(new Location(1,1));
 		assertTrue(frame.getMap().eatCookie("pacman") != null);
 
 
