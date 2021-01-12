@@ -26,9 +26,8 @@ public class Ghost{
         }
 
         Random r = new Random();
-        int random_loc = valid_moves.size() - 1;
-		int newloc = r.nextInt(random_loc);
-		myLoc = valid_moves.get(newloc);
+        int random_loc = r.nextInt(valid_moves.size());
+		myLoc = valid_moves.get(random_loc);
         myMap.move(myName, myLoc, Map.Type.GHOST);
 		
         return true;
