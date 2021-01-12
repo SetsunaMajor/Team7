@@ -5,6 +5,9 @@
  * Yair Bar
  * Zachary Santamaria
 
+![PacMan](add link here)
+
+
 ## 2. Running the Code
 This code could be run from the command line by using the following commands.
 ```bash
