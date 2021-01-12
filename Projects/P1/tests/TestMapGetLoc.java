@@ -2,6 +2,7 @@ import java.awt.Color;
 import junit.framework.*;
 import java.io.*;
 import static org.junit.Assert.*;
+import java.util.HashSet;
 
 public class TestMapGetLoc extends TestCase {
 	
