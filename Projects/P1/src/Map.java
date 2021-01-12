@@ -61,15 +61,15 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
-        if (!locations.containsKey(name) || !components.containsKey(name)) return false;
+        try{
         
-	Location older = locations.get(name);
-	components.get(name).setLocation(loc.x, loc.y);
-        locations.put(name, loc);
-	field.get(older).remove(type);
-	field.get(loc).add(type);
-		
-	return true;
+		Location older = locations.get(name);
+		components.get(name).setLocation(loc.x, loc.y);
+        	locations.put(name, loc);
+		field.get(older).remove(type);
+		field.get(loc).add(type);
+	} catch (Exception e) {
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
