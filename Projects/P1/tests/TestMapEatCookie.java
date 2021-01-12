@@ -7,13 +7,12 @@ import static org.junit.Assert.*;
 public class TestMapEatCookie extends TestCase {
 	
 	public void testMapEatCookie() throws FileNotFoundException {
-
-        NoFrame frame = new NoFrame();
-
-		PacMan player1 = frame.addPacMan(new Location(0,0));
+		MainFrame frame = new MainFrame();
+		PacMan pacman = frame.addPacMan(new Location(0, 0)); 
+		frame.initPlayers(); 
+		frame.startGame();
 		assertTrue(frame.getMap().eatCookie("pacman") == null);
-
-		PacMan player2 = frame.addPacMan(new Location(1,1));
-		assertTrue(frame.getMap().eatCookie("pacman") != null);
-    }
+		pacman.myLoc.shift(1, 1);
+		assertFalse(frame.getMap().eatCookie("pacman") == null);
+	}
 }
