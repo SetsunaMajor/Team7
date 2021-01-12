@@ -16,7 +16,6 @@ public class TestGhostInRange extends TestCase {
 		frame.addGhost(new Location(3, 2), "Pinky", Color.pink); // down
 		
 		PacMan player = frame.addPacMan(new Location(11, 12));
-
 		PacMan player2 = frame.addPacMan(new Location(10, 10));
 		PacMan player3 = frame.addPacMan(new Location(9, 9));
 		PacMan player4 = frame.addPacMan(new Location(3, 3));
@@ -30,8 +29,14 @@ public class TestGhostInRange extends TestCase {
                 player3.is_ghost_in_range());
 		assertTrue("PacMan at (" + 3 + ", " + 3 + ") in range of a ghost", 
                 player4.is_ghost_in_range());
-    }
+		// Test a scenario where the pacman is in a corner of the map
+		frame.addGhost(new Location(1, 2), "Pinky", Color.pink);
+		PacMan player5 = frame.addPacMan(new Location(1, 1));
 
+<<<<<<< HEAD
     }
+=======
+		assertTrue(player5.is_ghost_in_range());
+	}
+>>>>>>> 95aa58c43d61577f7cee6ea2fbb82134c3c6e041
 }
-

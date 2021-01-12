@@ -1,12 +1,11 @@
-import junit.framework.*;
 import java.awt.Color;
+import junit.framework.*;
 import java.io.*;
 import static org.junit.Assert.*;
 
-
-public class TestMapGetLoc {
+public class TestMapGetLoc extends TestCase {
 	
-	public void testMapGetLoc() {
+	public void testMapGetLoc() throws FileNotFoundException {
 		NoFrame frame = new NoFrame();  
 		PacMan pacman = frame.addPacMan(new Location(5, 5)); 
 		Map map = frame.getMap(); 
