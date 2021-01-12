@@ -39,7 +39,7 @@ public class Ghost{
         }
 
         Random r = new Random();
-        int random_loc = r.nextInt(valid_moves.size());
+        int random_loc = r.nextInt(valid_moves.size() - 1);
 	myLoc = valid_moves.get(random_loc);
         myMap.move(myName, myLoc, Map.Type.GHOST);
 		
