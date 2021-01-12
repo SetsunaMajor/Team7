@@ -1,10 +1,11 @@
 import java.awt.Color;
 import junit.framework.*;
+import java.io.*;
 import static org.junit.Assert.*;
 
-public class TestMapAttack {
+public class TestMapAttack extends TestCase {
 
-	public void testMapAttack() {
+	public void testMapAttack() throws FileNotFoundException {
 		
         NoFrame frame = new NoFrame();
 		
@@ -17,7 +18,7 @@ public class TestMapAttack {
 	}
 
 
-    public void testMapAttack3(){
+    public void testMapAttack3() throws FileNotFoundException {
         NoFrame frame = new NoFrame();
 
 		frame.addPacMan(new Location(9, 9));
