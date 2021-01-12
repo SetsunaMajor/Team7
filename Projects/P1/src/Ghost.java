@@ -20,13 +20,15 @@ public class Ghost{
 	public boolean move() {
 		
 		ArrayList<Location> valid_moves = get_valid_moves();
-		if(valid_moves.size() < 1) {
+		
+		if (valid_moves.size() < 1) {
             return false;
         }
 
         Random r = new Random();
-        int random_loc = valid_moves.size();
-        myLoc = valid_moves.get(random_loc);
+        int random_loc = valid_moves.size() - 1;
+		int newloc = r.nextInt(random_loc);
+		myLoc = valid_moves.get(newloc);
         myMap.move(myName, myLoc, Map.Type.GHOST);
 		
         return true;
