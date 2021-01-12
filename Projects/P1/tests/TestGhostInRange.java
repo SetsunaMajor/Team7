@@ -1,11 +1,11 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
+import static org.junit.Assert.*;
 
 public class TestGhostInRange extends TestCase {
 
 	public void testGhostInRange() throws FileNotFoundException{
-		return null;
         
         NoFrame frame = new NoFrame();
 
@@ -16,7 +16,6 @@ public class TestGhostInRange extends TestCase {
 		frame.addGhost(new Location(3, 2), "Pinky", Color.pink); // down
 		
 		PacMan player = frame.addPacMan(new Location(11, 12));
-
 		PacMan player2 = frame.addPacMan(new Location(10, 10));
 		PacMan player3 = frame.addPacMan(new Location(9, 9));
 		PacMan player4 = frame.addPacMan(new Location(3, 3));
@@ -32,9 +31,9 @@ public class TestGhostInRange extends TestCase {
                 player4.is_ghost_in_range());
 		// Test a scenario where the pacman is in a corner of the map
 		frame.addGhost(new Location(1, 2), "Pinky", Color.pink);
-		PacMan player = frame.addPacMan(new Location(1, 1));
+		PacMan player5 = frame.addPacMan(new Location(1, 1));
 
-		assertTrue(player.is_ghost_in_range());
-
+		assertTrue(player5.is_ghost_in_range());
+	}
 }
 
