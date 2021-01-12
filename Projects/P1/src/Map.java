@@ -108,7 +108,7 @@ public class Map{
 			/* Remove the cookie from hashmaps*/
 			field.get(cookieLocation).remove(Type.COOKIE);
 			locations.remove(componentString);
-			cookies--;
+			cookies++;
 			return components.remove(componentString);
 		}
 
