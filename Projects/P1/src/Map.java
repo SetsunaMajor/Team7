@@ -62,11 +62,14 @@ public class Map{
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
         if (!locations.containsKey(name) || !components.containsKey(name)) return false;
-        components.get(name).setLocation(loc.x, loc.y);
+        
+	Location older = locations.get(name);
+	components.get(name).setLocation(loc.x, loc.y);
         locations.put(name, loc);
-		field.get(loc).add(type);
+	field.get(older).remove(type);
+	field.get(loc).add(type);
 		
-		return true;
+	return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
