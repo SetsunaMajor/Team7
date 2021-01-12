@@ -14,7 +14,13 @@ public class TestMapGetLoc extends TestCase {
 		HashSet<Map.Type> pacmanSet = new HashSet<Map.Type>();
 
 		pacmanSet.add(Map.Type.PACMAN);
+		pacmanSet.add(Map.Type.COOKIE);
 
 		assertEquals(map.getLoc(new Location(5, 5)), pacmanSet);
+
+		HashSet<Map.Type> cookies = new HashSet();
+		cookies.add(Map.Type.COOKIE);
+
+		assertEquals(map.getLoc(new Location(1,2)), cookies);
 	}
 }
