@@ -19,7 +19,7 @@ public class TestPacManMove extends TestCase {
 
 		assertTrue(pacman.move());
 
-		pacman.shift(50, 50);
+		pacman.myLoc.shift(50, 50);
 
 		assertFalse(pacman.move());
 	}
