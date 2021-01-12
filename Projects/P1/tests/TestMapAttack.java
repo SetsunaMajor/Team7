@@ -11,7 +11,6 @@ public class TestMapAttack {
 		frame.addGhost(new Location(4, 5), "test", Color.white);
 		
 		assertTrue(frame.getMap().attack("test"));
-
 		assertTrue(frame.getMap().isGameOver());
 
 	}
