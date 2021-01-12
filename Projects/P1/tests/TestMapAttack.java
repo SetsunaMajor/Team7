@@ -29,5 +29,6 @@ public class TestMapAttack extends TestCase {
 
 		// Make sure that the game is not over
 		assertFalse(frame.getMap().isGameOver());
+    }
 
 }
