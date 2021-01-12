@@ -21,19 +21,18 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		ArrayList<Location>valid_moves = new ArrayList<Location>();
-		valid_moves = get_valid_moves();
-		Random r = new Random();
-		int random_loc = r.nextInt(valid_moves.size() - 1);
+		ArrayList<Location> valid_moves = get_valid_moves();
 		
-		if(valid_moves == null || valid_moves.size() < 1){
-			return false;
-		}
+		if (valid_moves.size() < 1) {
+            return false;
+        }
 
+        Random r = new Random();
+        int random_loc = r.nextInt(valid_moves.size() - 1);
 		myLoc = valid_moves.get(random_loc);
-		myMap.move(myName, myLoc, Map.Type.PACMAN);
-
-		return true;
+        myMap.move(myName, myLoc, Map.Type.PACMAN);
+		
+        return true;
 	}
 
 	public boolean is_ghost_in_range() { 
