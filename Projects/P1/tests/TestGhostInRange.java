@@ -34,5 +34,5 @@ public class TestGhostInRange extends TestCase {
 		PacMan player5 = frame.addPacMan(new Location(1, 1));
 
 		assertTrue(player5.is_ghost_in_range());
-	}
+    }
 }

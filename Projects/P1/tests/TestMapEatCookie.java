@@ -7,22 +7,13 @@ import static org.junit.Assert.*;
 public class TestMapEatCookie extends TestCase {
 	
 	public void testMapEatCookie() throws FileNotFoundException {
-		//Creating A Map 
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
 
-		//Creating Players
-		PacMan pacman = frame.addPacMan(new Location(0, 0)); //Creates PacMan at location x, y
+        NoFrame frame = new NoFrame();
 
-		//alternatively if you don't need the PacMan or Ghost objects in your tests
-		frame.initPlayers(); //Creates all of the players
-
-		//Start The Game
-		frame.startGame();
-
+		PacMan player1 = frame.addPacMan(new Location(0,0));
 		assertTrue(frame.getMap().eatCookie("pacman") == null);
 
-		pacman.myLoc.shift(1, 1);
-		
-		assertFalse(frame.getMap().eatCookie("pacman") == null);
-	}
+		PacMan player2 = frame.addPacMan(new Location(1,1));
+		assertTrue(frame.getMap().eatCookie("pacman") != null);
+    }
 }
