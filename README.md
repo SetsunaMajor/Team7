@@ -5,7 +5,7 @@
  * Yair Bar
  * Zachary Santamaria
 
-![PacMan](add link here)
+![PacMan](https://github.com/cmsc388T/Team7/blob/main/Projects/P1/tests/Capture.PNG)
 
 
 ## 2. Running the Code
