@@ -62,12 +62,14 @@ public class Map{
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
         if (!locations.containsKey(name) || !components.containsKey(name)) return false;
-        Location old = locations.get(name);
-        components.get(name).setLocation(loc.x, loc.y);
+        
+	Location older = locations.get(name);
+	components.get(name).setLocation(loc.x, loc.y);
         locations.put(name, loc);
-		field.get(loc).add(type);
+	field.get(older).remove(type);
+	field.get(loc).add(type);
 		
-		return true;
+	return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
@@ -107,10 +109,11 @@ public class Map{
 			String componentString = "tok_x" + cookieLocation.x + "_y" + cookieLocation.y;
 
 			/* Remove the cookie from hashmaps*/
-			field.get(cookieLocation).remove(Type.COOKIE);
-			locations.remove(componentString);
-			cookies++;
-			return components.remove(componentString);
+			if(field.get(cookieLocation).remove(Type.COOKIE)){
+				locations.remove(componentString);
+				cookies++;
+				return components.remove(componentString);
+			}
 		}
 
 		return null;
