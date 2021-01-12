@@ -24,7 +24,7 @@ public class PacMan{
 		ArrayList<Location>valid_moves = new ArrayList<Location>();
 		valid_moves = get_valid_moves();
 		Random r = new Random();
-		int random_loc = r.nextInt(valid_moves.size());
+		int random_loc = r.nextInt(valid_moves.size() - 1);
 		
 		if(valid_moves == null || valid_moves.size() < 1){
 			return false;
