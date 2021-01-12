@@ -33,10 +33,6 @@ public class TestGhostInRange extends TestCase {
 		frame.addGhost(new Location(1, 2), "Pinky", Color.pink);
 		PacMan player5 = frame.addPacMan(new Location(1, 1));
 
-<<<<<<< HEAD
-    }
-=======
 		assertTrue(player5.is_ghost_in_range());
 	}
->>>>>>> 95aa58c43d61577f7cee6ea2fbb82134c3c6e041
 }
