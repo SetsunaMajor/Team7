@@ -109,10 +109,11 @@ public class Map{
 			String componentString = "tok_x" + cookieLocation.x + "_y" + cookieLocation.y;
 
 			/* Remove the cookie from hashmaps*/
-			field.get(cookieLocation).remove(Type.COOKIE);
-			locations.remove(componentString);
-			cookies++;
-			return components.remove(componentString);
+			if(field.get(cookieLocation).remove(Type.COOKIE)){
+				locations.remove(componentString);
+				cookies++;
+				return components.remove(componentString);
+			}
 		}
 
 		return null;
