@@ -5,6 +5,9 @@
  * Yair Bar
  * Zachary Santamaria
 
+![PacMan](https://github.com/cmsc388T/Team7/blob/main/Projects/P1/tests/Capture.PNG)
+
+
 ## 2. Running the Code
 This code could be run from the command line by using the following commands.
 ```bash
