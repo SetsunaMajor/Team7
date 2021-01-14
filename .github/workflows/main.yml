@@ -33,7 +33,7 @@ jobs:
           cd Projects/P1
           javac -cp "src/" src/*.java
           
-TestPacManMove:
+  TestPacManMove:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk
@@ -52,7 +52,7 @@ TestPacManMove:
           javac -cp "Projects/P1/tests/junit-4.10.jar:." Projects/P1/tests/*.java
           java -cp "Projects/P1/src/junit-4.10.jar:." org.junit.runner.JUnitCore TestPacmanMove
   
-TestPacManInRange:
+  TestPacManInRange:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk
@@ -71,7 +71,7 @@ TestPacManInRange:
           javac -cp "Projects/P1/tests/junit-4.10.jar:." Projects/P1/tests/*.java
           java -cp "Projects/P1/src/junit-4.10.jar:." org.junit.runner.JUnitCore TestPacManInRange
 
-TestMapEatCookie:
+  TestMapEatCookie:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk
