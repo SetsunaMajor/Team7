@@ -46,8 +46,8 @@ jobs:
       - name: Compile The Code
         run: |
           cd Projects/P1
-          javac -cp "junit-4.10.jar:." *.java
-          java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestPacManValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
 
   testGhostMove:
     # The type of runner that the job will run on
@@ -62,8 +62,8 @@ jobs:
       - name: Compile The Code
         run: |
           cd Projects/P1
-          javac -cp "junit-4.10.jar:." *.java
-          java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestGhostMove
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
 
   mapAttack:
     # The type of runner that the job will run on
@@ -78,5 +78,5 @@ jobs:
       - name: Compile The Code
         run: |
           cd Projects/P1
-          javac -cp "junit-4.10.jar:." *.java
-          java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestMapAttack
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
