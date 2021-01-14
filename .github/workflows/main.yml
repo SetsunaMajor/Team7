@@ -47,10 +47,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: JUnit Test for PacMan's Move() function.
         run: |
-          javac -cp "Projects/P1/src/" Projects/P1/src/*.java
-          javac -cp "Projects/P1/tests/" Projects/P1/tests/*.java
-          javac -cp "Projects/P1/tests/junit-4.10.jar:." Projects/P1/tests/*.java
-          java -cp "Projects/P1/src/junit-4.10.jar:." org.junit.runner.JUnitCore TestPacmanMove
+          cd Projects/P1
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
   
   TestPacManInRange:
     # The type of runner that the job will run on
@@ -66,10 +65,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: JUnit Test for Ghost's is_pacman_in_range() function.
         run: |
-          javac -cp "Projects/P1/src/" Projects/P1/src/*.java
-          javac -cp "Projects/P1/tests/" Projects/P1/tests/*.java
-          javac -cp "Projects/P1/tests/junit-4.10.jar:." Projects/P1/tests/*.java
-          java -cp "Projects/P1/src/junit-4.10.jar:." org.junit.runner.JUnitCore TestPacManInRange
+          cd Projects/P1
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
 
   TestMapEatCookie:
     # The type of runner that the job will run on
@@ -85,7 +83,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: JUnit Test for Map's EatCookie() function.
         run: |
-          javac -cp "Projects/P1/src/" Projects/P1/src/*.java
-          javac -cp "Projects/P1/tests/" Projects/P1/tests/*.java
-          javac -cp "Projects/P1/tests/junit-4.10.jar:." Projects/P1/tests/*.java
-          java -cp "Projects/P1/src/junit-4.10.jar:." org.junit.runner.JUnitCore TestMapEatCookie
+          cd Projects/P1
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
