@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ FTR-actions ]
   pull_request:
-    branches: [ main ]
+    branches: [ FTR-actions ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,6 +30,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Complie code.
         run: |
+          cd Projects/P1
           javac -cp "src/" src/*.java 
 
   testPacManValidMoves:
@@ -44,6 +45,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Compile The Code
         run: |
+          cd Projects/P1
           javac -cp "junit-4.10.jar:." *.java
           java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestPacManValidMoves
 
@@ -59,6 +61,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Compile The Code
         run: |
+          cd Projects/P1
           javac -cp "junit-4.10.jar:." *.java
           java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestGhostMove
 
@@ -74,5 +77,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Compile The Code
         run: |
+          cd Projects/P1
           javac -cp "junit-4.10.jar:." *.java
           java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestMapAttack
