@@ -93,7 +93,7 @@ public class Map{
 		if (locations.containsKey(Name) == true) {
 			//Creating a Ghost to utilize the attack method.
 			Ghost ghostName = new Ghost(Name, locations.get(Name), this);
-			if (ghostName.is_pacman_in_range() == true) {
+			if (ghostName.is_pacman_in_range() == false) {
 				gameOver = true;
 				return true;
 			}
