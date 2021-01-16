@@ -9,6 +9,6 @@ public class TestMapMove extends TestCase {
 	public void testMapMove() throws FileNotFoundException {
 		NoFrame frame = new NoFrame();
 		Ghost ghost1 = frame.addGhost(new Location(2, 2), "ghost1", Color.BLACK);
-		assertFalse(frame.getMap().move("ghost1", new Location(2, 1), Map.Type.GHOST));
+		assertTrue(frame.getMap().move("ghost1", new Location(2, 1), Map.Type.GHOST));
 	}
 }
