@@ -45,11 +45,11 @@ public class Ghost{
         	return true;
 	}
 
-	public boolean is_pacman_in_range() { 
+	public boolean is_pacman_in_range() {
 
-		if (myMap.getLoc(myLoc.shift(0,1)).contains(Map.Type.PACMAN) || 
-		myMap.getLoc(myLoc.shift(1,0)).contains(Map.Type.PACMAN) || 
-		myMap.getLoc(myLoc.shift(-1,0)).contains(Map.Type.PACMAN) || 
+		if (myMap.getLoc(myLoc.shift(0,1)).contains(Map.Type.PACMAN) ||
+		myMap.getLoc(myLoc.shift(1,0)).contains(Map.Type.PACMAN) ||
+		myMap.getLoc(myLoc.shift(-1,0)).contains(Map.Type.PACMAN) ||
 		myMap.getLoc(myLoc.shift(0,-1)).contains(Map.Type.PACMAN)) {
 			return true;
 	}
@@ -58,6 +58,6 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		return this.is_pacman_in_range();
+		return false;
 	}
 }

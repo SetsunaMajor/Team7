@@ -10,6 +10,6 @@ public class TestAttack extends TestCase {
 
 		Ghost ghost = frame.addGhost(new Location (10,10), "ghost", Color.WHITE);
 		PacMan pac = frame.addPacMan(new Location (10,9));
-		assertFalse(ghost.attack());
+		assertTrue(ghost.attack());
 	}
 }
