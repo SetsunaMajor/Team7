@@ -35,7 +35,7 @@ public class PacMan{
 		int random_loc = 0;
 		Random r = new Random();
 
-		if(valid_moves.size() == 0){
+		if(valid_moves.size() > 0){
 			return false;
 		}
 		random_loc = r.nextInt(valid_moves.size());
