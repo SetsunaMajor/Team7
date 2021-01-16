@@ -24,7 +24,7 @@ public class PacMan{
 			possible_moves.add(myLoc.shift(0,-1));
 		for (Location l : possible_moves) {
 			if (!myMap.getLoc(l).contains(Map.Type.WALL)) {
-				possible_moves2.add(l);
+				possible_moves.remove(l);
 			}
 		}
 		return possible_moves2;
