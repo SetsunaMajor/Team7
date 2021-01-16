@@ -27,7 +27,7 @@ public class Ghost{
             }
         }
 
-        return valid_ghost_moves2;
+        return valid_ghost_moves;
 
     	}
 
@@ -36,7 +36,7 @@ public class Ghost{
 		int random_loc = 0;
 		Random r = new Random();
 
-		if(valid_moves.size() == 0){
+		if(valid_moves.size() != 0){
 			return false;
 		}
 		random_loc = r.nextInt(valid_moves.size());
@@ -45,12 +45,12 @@ public class Ghost{
         	return true;
 	}
 
-	public boolean is_pacman_in_range() { 
+	public boolean is_pacman_in_range() {
 
-		if (myMap.getLoc(myLoc.shift(0,1)).contains(Map.Type.PACMAN) || 
-		myMap.getLoc(myLoc.shift(1,0)).contains(Map.Type.PACMAN) || 
-		myMap.getLoc(myLoc.shift(-1,0)).contains(Map.Type.PACMAN) || 
-		myMap.getLoc(myLoc.shift(0,-1)).contains(Map.Type.PACMAN)) {
+		if (myMap.getLoc(myLoc.shift(0,1)).contains(Map.Type.COOKIE) ||
+		myMap.getLoc(myLoc.shift(1,0)).contains(Map.Type.COOKIE) ||
+		myMap.getLoc(myLoc.shift(-1,0)).contains(Map.Type.COOKIE) ||
+		myMap.getLoc(myLoc.shift(0,-1)).contains(Map.Type.COOKIE)) {
 			return true;
 	}
 
@@ -58,6 +58,6 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		return this.is_pacman_in_range();
+		return false;
 	}
 }
