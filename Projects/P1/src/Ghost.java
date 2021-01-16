@@ -27,7 +27,7 @@ public class Ghost{
             }
         }
 
-        return valid_ghost_moves2;
+        return valid_ghost_moves;
 
     	}
 
