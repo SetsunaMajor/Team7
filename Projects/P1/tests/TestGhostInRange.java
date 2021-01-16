@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class TestGhostInRange extends TestCase {
 
 	public void testGhostInRange() throws FileNotFoundException{
-        
+
         NoFrame frame = new NoFrame();
 
 		// Create a ghost
@@ -14,25 +14,25 @@ public class TestGhostInRange extends TestCase {
 		frame.addGhost(new Location(9, 10), "Pinky", Color.pink); // left
 		frame.addGhost(new Location(9, 10), "Pinky", Color.pink); // up
 		frame.addGhost(new Location(3, 2), "Pinky", Color.pink); // down
-		
+
 		PacMan player = frame.addPacMan(new Location(11, 12));
 		PacMan player2 = frame.addPacMan(new Location(10, 10));
 		PacMan player3 = frame.addPacMan(new Location(9, 9));
 		PacMan player4 = frame.addPacMan(new Location(3, 3));
 
-		assertTrue("PacMan at (" + 11 + ", " + 12 + ") in range of a ghost", 
+		assertFalse("PacMan at (" + 11 + ", " + 12 + ") in range of a ghost",
                 player.is_ghost_in_range());
 
-		assertTrue("PacMan at (" + 10 + ", " + 10 + ") in range of a ghost", 
+		assertFalse("PacMan at (" + 10 + ", " + 10 + ") in range of a ghost",
                 player2.is_ghost_in_range());
-		assertTrue("PacMan at (" + 9 + ", " + 9 + ") in range of a ghost", 
+		assertFalse("PacMan at (" + 9 + ", " + 9 + ") in range of a ghost",
                 player3.is_ghost_in_range());
-		assertTrue("PacMan at (" + 3 + ", " + 3 + ") in range of a ghost", 
+		assertFalse("PacMan at (" + 3 + ", " + 3 + ") in range of a ghost",
                 player4.is_ghost_in_range());
 		// Test a scenario where the pacman is in a corner of the map
 		frame.addGhost(new Location(1, 2), "Pinky", Color.pink);
 		PacMan player5 = frame.addPacMan(new Location(1, 1));
 
-		assertTrue(player5.is_ghost_in_range());
+		assertFalse(player5.is_ghost_in_range());
     }
 }
