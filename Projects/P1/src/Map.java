@@ -68,7 +68,7 @@ public class Map{
 			locations.put(name, loc);
 			field.get(older).remove(type);
 			field.get(loc).add(type);
-			return false;
+			return true;
 		} catch (Exception e) {
 			return false;
 		}
