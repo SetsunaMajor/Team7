@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.ArrayList;
 import javax.swing.JComponent;
-
+//fix mark for push
 public class PacMan{
 	String myName;
 	Location myLoc;
