@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.ArrayList;
 import javax.swing.JComponent;
-//Run tests
+
 public class PacMan{
 	String myName;
 	Location myLoc;
@@ -17,6 +17,7 @@ public class PacMan{
 
 	public ArrayList<Location> get_valid_moves() {
 		ArrayList<Location> possible_moves = new ArrayList<Location>();
+		ArrayList<Location> possible_moves2 = new ArrayList<Location>();
 			possible_moves.add(myLoc.shift(1,0));
 			possible_moves.add(myLoc.shift(0,1));
 			possible_moves.add(myLoc.shift(-1,0));
@@ -26,7 +27,7 @@ public class PacMan{
 				possible_moves.remove(l);
 			}
 		}
-		return possible_moves;
+		return possible_moves2;
 	}
 
 	public boolean move() {
@@ -50,9 +51,9 @@ public class PacMan{
      */
 	public boolean is_ghost_in_range() {
 		if (myMap.getLoc(myLoc.shift(0,-1)).contains(Map.Type.GHOST) ||
-            	myMap.getLoc(myLoc.shift(0,1)).contains(Map.Type.GHOST) ||
+            	myMap.getLoc(myLoc.shift(0,0)).contains(Map.Type.GHOST) ||
            	myMap.getLoc(myLoc.shift(-1,0)).contains(Map.Type.GHOST) ||
-           	myMap.getLoc(myLoc.shift(1,0)).contains(Map.Type.GHOST)) {
+           	myMap.getLoc(myLoc.shift(0,-1)).contains(Map.Type.GHOST)) {
                 return true;
         	}
 
@@ -60,6 +61,6 @@ public class PacMan{
 	}
 
 	public JComponent consume() {
-		return myMap.eatCookie(myName);
+		return myMap.eatCookie("myName");
 	}
 }
