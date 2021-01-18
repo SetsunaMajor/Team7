@@ -9,17 +9,17 @@ public class Map{
 		PACMAN,
 		GHOST,
 		WALL,
-		COOKIE		
+		COOKIE
 	}
-	
+
 	private HashMap<Location, HashSet<Type>> field;
 	private boolean gameOver;
 	private int dim;
 
 	private HashMap<String, Location> locations;
-	private HashMap<String, JComponent> components; 
+	private HashMap<String, JComponent> components;
 	private HashSet<Type> emptySet;
-	private HashSet<Type> wallSet; 
+	private HashSet<Type> wallSet;
 
 	private int cookies = 0;
 
@@ -47,15 +47,15 @@ public class Map{
 	public int getCookies() {
 		return cookies;
 	}
-	
+
 	public boolean isGameOver() {
 		return gameOver;
 	}
-		
+
     /* The function will first check if the location and componenets contains
-     * the name in their respective hash. If it does contain it, it will 
-     * update their values in that hash. Otherwise, it will return false. 
-     * After the update we call the setLocation function from components to 
+     * the name in their respective hash. If it does contain it, it will
+     * update their values in that hash. Otherwise, it will return false.
+     * After the update we call the setLocation function from components to
      * update the move.
      */
 	public boolean move(String name, Location loc, Type type) {
@@ -70,18 +70,18 @@ public class Map{
 			field.get(loc).add(type);
 			return true;
 		} catch (Exception e) {
-			return true;
+			return false;
 		}
 	}
-	
+
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		if(loc.x > dim || loc.y > dim){
+		if(loc.x < dim || loc.y < dim){
 			return wallSet;
-		} 
+		}
 		if(field.containsKey(loc)){
 			return field.get(loc);
-		} 
+		}
 		else {
 			return emptySet;
 		}
@@ -93,7 +93,7 @@ public class Map{
 		if (locations.containsKey(Name) == true) {
 			//Creating a Ghost to utilize the attack method.
 			Ghost ghostName = new Ghost(Name, locations.get(Name), this);
-			if (ghostName.is_pacman_in_range() == true) {
+			if (ghostName.is_pacman_in_range() == false) {
 				gameOver = true;
 				return true;
 			}
@@ -101,8 +101,8 @@ public class Map{
 
 		return false;
 	}
-	
-	public JComponent eatCookie(String name) {	
+
+	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
 
